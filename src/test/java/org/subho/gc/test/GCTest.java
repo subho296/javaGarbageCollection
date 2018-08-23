@@ -1,9 +1,9 @@
-package com.agoda.gc.test;
+package org.subho.gc.test;
 
-import com.agoda.gc.GC;
-import com.agoda.gc.test.entity.A;
-import com.agoda.gc.test.entity.B;
-import com.agoda.gc.test.entity.C;
+import org.subho.gc.GC;
+import org.subho.gc.test.entity.A;
+import org.subho.gc.test.entity.B;
+import org.subho.gc.test.entity.C;
 import org.junit.Test;
 
 public class GCTest {

@@ -1,4 +1,4 @@
-package com.agoda.gc;
+package org.subho.gc;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

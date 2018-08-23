@@ -1,4 +1,4 @@
-Garbage collector
+Java Garbage collector
 
 This is a rudimentary implementation of garbage collector. This implementation takes care of identifying unused references,
 removing them and calling finalize method if present.

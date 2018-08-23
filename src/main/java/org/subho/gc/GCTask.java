@@ -7,10 +7,12 @@ public class GCTask implements Runnable{
 
     private Reference root;
     private Set<Integer> releaseObjects;
+    private ReferenceQueue referenceQueue;
 
-    public GCTask(Reference root, Set<Integer> releaseObjects) {
+    public GCTask(Reference root, Set<Integer> releaseObjects, ReferenceQueue referenceQueue) {
         this.root = root;
         this.releaseObjects = releaseObjects;
+        this.referenceQueue = referenceQueue;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class GCTask implements Runnable{
             try {
                 if (reference.getObject().getClass().getDeclaredMethod("finalize") == null)
                     continue;
-                GC.addToReferenceQueue(reference.getObject());
+                referenceQueue.add(reference.getObject());
             } catch (NoSuchMethodException e) {
                 System.out.println("Finalize method does not exist");
             }

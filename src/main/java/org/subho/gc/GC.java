@@ -64,12 +64,8 @@ public final class GC {
     }
 
     public static synchronized void gc(){
-        gcExecutor.submit(new GCTask(root, new HashSet<Integer>(releaseObjects)));
+        gcExecutor.submit(new GCTask(root, new HashSet<Integer>(releaseObjects), referenceQueue));
         releaseObjects.clear();
     }
 
-
-    public static void addToReferenceQueue(Object object) {
-        referenceQueue.add(object);
-    }
 }
